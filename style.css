@@ -490,3 +490,40 @@ ol {
     adjacent sibling selector (+)
     general sibling selector (~)
 */
+
+.list-circle li {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+}
+
+.list-num li {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 16px;
+}
+
+.list-circle>li {
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+}
+
+.list-num>li {
+    font-family: 'Questrial', sans-serif;
+    font-size: 16px;
+}
+
+#potfolio h1~p {
+    text-indent: 20px;
+    text-align: justify;
+    background-color: rgba(255, 213, 166, 0.6);
+}
+
+#potfolio h1+p {
+    text-indent: 20px;
+    text-align: justify;
+    background-color: rgba(250, 245, 254, 0.6);
+}
+
+
+/* 
+
+*/
