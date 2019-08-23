@@ -56,12 +56,7 @@ a {
     color: #060309;
 }
 
-.button:hover {
-    background-color: #060309;
-    color: cadetblue;
-}
-
-.button:active {
+.active {
     background-color: orangered;
     color: wheat;
 }
@@ -525,5 +520,20 @@ ol {
 
 
 /* 
-
+    Pseudo-classes
 */
+
+nav a:first-child {
+    background-color: orangered;
+    color: wheat;
+}
+
+.table thead tr:first-child {
+    background-color: teal;
+    color: wheat;
+}
+
+.nav .button:hover:not(.active) {
+    background-color: #060309;
+    color: cadetblue;
+}
