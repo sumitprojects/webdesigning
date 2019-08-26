@@ -537,3 +537,24 @@ nav a:first-child {
     background-color: #060309;
     color: cadetblue;
 }
+
+
+/* Image Shadow */
+
+a.img-hover {
+    position: relative;
+    z-index: 1;
+}
+
+.img-shadow {
+    opacity: 0;
+    position: absolute;
+    left: 0px;
+    z-index: -1;
+    filter: blur(10px);
+    /* For IE8 and earlier */
+}
+
+a.img-hover:hover .img-shadow {
+    opacity: 1;
+}
