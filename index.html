@@ -304,16 +304,31 @@
     </section>
 
     <section id="contact" class="parallax">
-        <form>
-            <div>
-                <input type="text">
+        <form name="input" action="" method="get" class="form border-radius-5">
+            <div class="form-control">
+                <label>Firstname:</label>
+                <input class="center border-radius-5" type="text" name="Name" value="Peter" size="20">
             </div>
-            <div class="rtl">
-                <label class="rtl" for=""><bdo dir="rtl">Hobby</bdo></label>
-                <input type="checkbox" class="rtl">
+            <div class="form-control">
+                <label>Lastname:</label>
+                <input class="center border-radius-5" type="text" name="Name" value="Griffin" size="20">
             </div>
-            <div>
-                <input type="button" value="send">
+            <div class="form-control">
+                <label>Qunatity:</label>
+                <input class="center border-radius-5" type="number" name="Name" max="5" min="1">
+            </div>
+            <div class="form-control">
+                <select class="dropdown" id="country" name="country">
+                    <option value="au">Australia</option>
+                    <option value="ca">Canada</option>
+                    <option value="usa">USA</option>
+                </select>
+            </div>
+            <div class="form-control">
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="form-control">
+                <input type="button" class="border-radius-5" value="Example Button">
             </div>
         </form>
     </section>
