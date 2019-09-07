@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+
+<body>
+    <div>
+        <!-- GET 3000 char -->
+        <form method="GET" action="formdata.php">
+            <input type="text" name="firstName" id="" />
+            <br>
+            <input type="text" name="lastName" id="" />
+            <br>
+            <input type="submit" value="Send">
+        </form>
+
+        <!-- POST[Logic File(php,asp,java any logical lang file)] -->
+        <form action="formdata.php" method="post">
+            <input type="text" name="firstName" id="" />
+            <br>
+            <input type="text" name="lastName" id="" />
+            <br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+    <div>
+        <h1>Basic Form Control</h1>
+        <form>
+            <div>
+                <label for="">Name</label>
+                <input type="text" name="" id="" placeholder="Enter Name" value="Default Value">
+            </div>
+            <div>
+                <label for="">Password</label>
+                <input type="password" name="" id="" placeholder="Enter Password">
+            </div>
+            <div>
+                <h1>Select Gender</h1>
+                <p>
+                    <label for="">Female</label><input type="radio" value="female" name="gender" id="">
+                </p>
+                <p>
+                    <label for="">Male</label><input type="radio" value="male" name="gender" id="">
+                </p>
+            </div>
+            <div>
+                <h1>Hobby</h1>
+                <p>
+                    <label for="">Singing</label><input type="checkbox" value="singing" name="hobby[]" id="">
+                </p>
+                <p>
+                    <label for="">Dancing</label><input type="checkbox" value="dancing" name="hobby[]" id="">
+                </p>
+            </div>
+
+            <div>
+                <p>
+                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                </p>
+            </div>
+            <div>
+                <h1>Dropdown</h1>
+                <select name="demo" id="">
+                    <option value="data">Data 1</option>
+                    <option value="data">Data 2</option>
+                    <option value="data">Data 3</option>
+                    <option value="data">Data 4</option>
+                </select>
+                <h2>Multiple Dropdown</h2>
+                <select name="demo2[]" id="" size="2" multiple>
+                        <option value="data">Data 1</option>
+                        <option value="data">Data 2</option>
+                        <option value="data">Data 3</option>
+                        <option value="data">Data 4</option>
+                </select>
+            </div>
+            <div>
+                <h1>File 1</h1>
+                <input type="file" name="img" id="">
+                <h1>File 2</h1>
+                <input type="file" name="img[]" multiple id="">
+            </div>
+
+            <div>
+                <input type="button" value="normal">
+                <input type="submit" value="submit">
+                <input type="reset" value="reset">
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
