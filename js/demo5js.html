@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Month = <span id="marks">jan</span></p>
+    <p id="ans">Month = <span id="grade"></span></p>
+</body>
+
+<script>
+    /** IF ELSE*/
+    var a = document.getElementById('marks').innerText;
+    switch (a) {
+        case 'Jan':
+            document.getElementById('grade').innerText = '1';
+            document.getElementById('ans').style.backgroundColor = 'teal';
+            document.getElementById('ans').style.color = 'white';
+            break;
+
+        default:
+            document.getElementById('grade').innerText = 'Invalid Month';
+            document.getElementById('ans').style.backgroundColor = 'tomato';
+            document.getElementById('ans').style.color = 'white';
+            break;
+    }
+</script>
+
+</html>

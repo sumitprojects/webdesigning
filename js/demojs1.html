@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title id="t">Document</title>
+</head>
+
+<body>
+    <a id="demo1" title="sumit">click</a>
+    <button id="demo2" title="sumit">click</button>
+    <img id="demo3" src="" alt="" width="50px" height="40px">
+
+    <p id="sample">
+
+    </p>
+
+    <section id="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quibusdam earum sapiente ducimus est pariatur quos totam doloremque odio, illum accusantium reprehenderit doloribus quas dolorum consectetur? Consequatur beatae ea modi. Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Iste animi perspiciatis excepturi, tempore laboriosam, et modi voluptatem, ducimus nobis quidem obcaecati cumque neque labore debitis accusamus optio quia voluptates fugit?</section>
+</body>
+<script>
+    document.getElementById('sample').innerText = "<b>sample</b>";
+    document.getElementById('demo1').title = 'demo1';
+    document.getElementById('demo1').href = '#about';
+    console.log(document.getElementById('demo1'));
+    document.getElementById('demo2').title = 'demo2';
+    console.log(document.getElementById('demo2'));
+    document.getElementById('t').innerText = 'Demo Js';
+    console.log(document.getElementById('t'));
+    document.getElementById('demo3').src = '../img/check.svg';
+</script>
+
+</html>

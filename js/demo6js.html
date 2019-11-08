@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="data">
+    </ul>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Number</th>
+            </tr>
+        </thead>
+        <tbody id="data2">
+
+        </tbody>
+    </table>
+    <div id="pat1">
+
+    </div>
+</body>
+<script>
+    var ulel = document.getElementById('data');
+
+    for (var i = 0; i < 5; i++) {
+        ulel.innerHTML += "<li>" + (i + 1) + "</li>";
+    }
+
+    var trel = document.getElementById('data2');
+    i = 0;
+    while (i < 10) {
+        trel.innerHTML += "<tr><td>" + (i + 1) + "</td></tr>";
+        i++;
+    }
+</script>
+
+</html>
