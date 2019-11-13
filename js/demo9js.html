@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Note: <span>Number Must be positive</span></p>
+    <p>Numbers : a=> <span id="aid">10</span> b=> <span id="bid">20</span></p>
+    <p>Addition <span id="ans1"></span></p>
+</body>
+<script>
+    // int add(int a,int b){
+    //   return a+b;
+    // }  
+
+    // function : keyword
+    // dynamic typed function
+    var anum, bnum, ans;
+    anum = parseFloat(document.getElementById('aid').innerHTML);
+    bnum = parseFloat(document.getElementById('bid').innerHTML);
+    ans = document.getElementById('ans1');
+
+    // Function Creation
+    function add(a, b) {
+        if (a < 0 || b < 0) {
+            return "Not a Number";
+        } else {
+            return a + b;
+        }
+    }
+
+    // function call
+    ans.innerHTML = add(anum, bnum);
+</script>
+
+</html>

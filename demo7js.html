@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Multiplication data = <span id="data">20</span></p>
+
+    <p>Starting Point = <span id="start"></span></p>
+    <p>Ending Point = <span id="end"></span></p>
+    <table border="1">
+        <thead>
+            <tr>
+                <th><span id="mulf"></span> * X</th>
+                <th>Z</th>
+            </tr>
+        </thead>
+        <tbody id="mul">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    var m = document.getElementById('data').innerHTML;
+    var o = document.getElementById('mulf');
+    o.innerHTML = m;
+
+    var start = document.getElementById('start').innerHTML;
+    var end = document.getElementById('end').innerHTML;
+    var tBody = document.getElementById('mul');
+
+
+    if (start > 0 && end > start) {
+        for (var i = start; i <= end; i++) {
+            tBody.innerHTML += ("<tr><td>" + m + "* " + i + " </td><td>" + (m * i) + "</td></tr>");
+        }
+
+    } else {
+        for (var i = 1; i <= 10; i++) {
+            tBody.innerHTML += ("<tr><td>" + m + "* " + i + " </td><td>" + (m * i) + "</td></tr>");
+        }
+
+    }
+</script>
+
+</html>
