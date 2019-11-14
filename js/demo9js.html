@@ -12,7 +12,9 @@
     <p>Note: <span>Number Must be positive</span></p>
     <p>Numbers : a=> <span id="aid">10</span> b=> <span id="bid">20</span></p>
     <p>Addition <span id="ans1"></span></p>
+    <p>Sub <span id="ans2"></span></p>
 </body>
+<script src="demo.js"></script>
 <script>
     // int add(int a,int b){
     //   return a+b;
@@ -21,21 +23,13 @@
     // function : keyword
     // dynamic typed function
     var anum, bnum, ans;
-    anum = parseFloat(document.getElementById('aid').innerHTML);
-    bnum = parseFloat(document.getElementById('bid').innerHTML);
+    anum = floatConvert('aid');
+    bnum = floatConvert('bid');
     ans = document.getElementById('ans1');
-
-    // Function Creation
-    function add(a, b) {
-        if (a < 0 || b < 0) {
-            return "Not a Number";
-        } else {
-            return a + b;
-        }
-    }
-
+    ans1 = document.getElementById('ans2');
     // function call
     ans.innerHTML = add(anum, bnum);
+    ans1.innerHTML = sub(anum, bnum);
 </script>
 
 </html>
