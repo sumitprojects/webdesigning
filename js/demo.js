@@ -1,11 +1,7 @@
 // console.log('External');
-
-
-
 function floatConvert(idData) {
     return parseFloat(document.getElementById(idData).innerHTML);
 }
-
 
 function intConvert(idData) {
     return parseInt(document.getElementById(idData).innerHTML);
