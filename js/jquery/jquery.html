@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Sample</p>
+    <p>ssss</p>
+    <span id="demo">Demo</span>
+    <span class="success">Data</span>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script>
+    // For name confliction
+    // jQuery(document).ready(function() {
+
+    // });
+
+    //for general purpose
+    // $(document).ready(function() {
+    //     $('p').css('color', 'red');
+    //     $('#demo').css('color', 'blue');
+    //     $('.success').css('color', 'teal');
+    // });
+
+    $(document).ready(function() {
+        $('p').click(function() {
+            $(this).css('color', 'red');
+        });
+
+
+        $('#demo').dblclick(function() {
+            $(this).css('color', 'blue');
+            $('p').css('color', 'orange');
+        });
+
+
+        $('.success').on({
+            mouseenter: function() {
+                $(this).css('color', 'teal');
+            },
+            mouseleave: function() {
+                $(this).css('color', 'black');
+            },
+        });
+
+        $('.success').hover(function() {
+            $(this).css('background-color', 'tomato');
+        }, function() {
+            $(this).css('background-color', 'yellow');
+        }, );
+
+    });
+</script>
+
+</html>

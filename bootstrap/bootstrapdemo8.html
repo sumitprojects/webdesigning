@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="progress-bar progress-bar-striped progress-bar-animated"></div>
+    <h1>Example heading <span class="badge badge-secondary">New</span></h1>
+    <div class="container">
+        <div class="btn-group btn-group-sm">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-success">Samsung</button>
+            <button type="button" class="btn btn-danger">Sony</button>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple<span class="badge badge-pill badge-secondary">New</span></button>
+            <button type="button" class="btn btn-success">Samsung</button>
+            <button type="button" class="btn btn-danger">Sony</button>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="btn-group btn-group-lg">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-success">Samsung</button>
+            <button type="button" class="btn btn-danger">Sony</button>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="btn-group-vertical">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-success">Samsung</button>
+            <button type="button" class="btn btn-danger">Sony</button>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+             Sony
+          </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Tablet</a>
+                    <a class="dropdown-item" href="#">Smartphone</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="container">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Sony</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Tablet</a>
+                    <a class="dropdown-item" href="#">Smartphone</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Apple</button>
+            <button type="button" class="btn btn-primary">Samsung</button>
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary">Sony</button>
+                <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Tablet</a>
+                    <a class="dropdown-item" href="#">Smartphone</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var counter = 0;
+        var pageProgress = $('.progress-bar');
+
+        setInterval(progress, 1000);
+
+        function progress() {
+            pageProgress.width(counter + '%');
+            pageProgress.html(counter + '%');
+
+            if (counter >= 100) {
+                pageProgress.fadeOut('slow');
+                clearInterval(progress);
+            }
+            if (counter <= 10) {
+                counter += 5;
+                pageProgress.removeClass('bg-success');
+                pageProgress.addClass('bg-danger');
+            } else if (counter <= 50) {
+                counter += 10;
+                pageProgress.removeClass('bg-danger');
+                pageProgress.addClass('bg-warning');
+            } else if (counter <= 75) {
+                counter += 15;
+                pageProgress.removeClass('bg-warning');
+                pageProgress.addClass('bg-info');
+            } else if (counter < 100) {
+                counter += 20;
+                pageProgress.removeClass('bg-info');
+                pageProgress.addClass('bg-success');
+            }
+        };
+
+    });
+</script>
+
+</html>
