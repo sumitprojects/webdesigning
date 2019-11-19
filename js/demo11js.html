@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <form name="calc">
+            <input type="text" name="op1" onchange="getData()" onkeyup="getData()" id="demo">
+            <input type="number" name="op2" onchange="getData()" onkeyup="getData()" id="demo1">
+            <div>
+                Male : <input type="radio" onchange="getData()" onkeyup="getData()" name="gender" value="male"><br> Female: <input type="radio" onchange="getData()" onkeyup="getData()" name="gender" value="female"><br>
+            </div>
+            <div>
+                <input type="range" name="op3" onchange="getData()" onkeyup="getData()" max="10" min="1">
+            </div>
+            <div>
+                <input type="color" name="op4" onchange="getData()" onkeyup="getData()">
+            </div>
+            <div>
+                <input type="date" name="op5" onchange="getData()" onkeyup="getData()">
+            </div>
+
+            <div>
+                singing: <input type="checkbox" name="hb" value="singing" onchange="getData()" onkeyup="getData()"><br> dancing: <input type="checkbox" name="hb" value="dancing" onchange="getData()" onkeyup="getData()"><br> reading: <input type="checkbox"
+                    name="hb" value="reading" onchange="getData()" onkeyup="getData()"><br>
+            </div>
+            <div>
+                <input type="password" name="password" value="sumit" />
+                <p onclick="getPass()">Toggle Password</p>
+            </div>
+            <!-- <p onclick="getData()">get</p>
+            <button onclick="getData()">Get</button> -->
+        </form>
+    </div>
+    <div>
+        <p id="ans"></p>
+    </div>
+</body>
+<script src="jslibrary.js"></script>
+<script>
+    var inputText = document.calc.op1 || document.getElementById('demo');
+    var inputNumber = document.calc.op2 || document.getElementById('demo1');
+    var inputRadio = document.calc.gender;
+    var inputRange = document.calc.op3;
+    var inputColor = document.calc.op4;
+    var inputDate = document.calc.op5;
+    var inputCheckbox = document.calc.hb;
+    var inputPassword = document.calc.password;
+
+    var ans = document.getElementById('ans');
+    console.log(inputCheckbox);
+
+    // function
+    var getData = function() {
+        // console.log(inputText.value);
+        ans.innerHTML = inputText.value;
+        ans.innerHTML += "  " + inputNumber.value;
+        ans.innerHTML += "  " + inputRadio.value;
+        ans.innerHTML += "  " + inputRange.value;
+        ans.innerHTML += "  " + inputColor.value;
+        ans.innerHTML += "  " + inputDate.value;
+
+        if (inputCheckbox[0].checked) {
+            ans.innerHTML += "  " + inputCheckbox[0].value;
+        }
+    };
+
+    var getPass = function() {
+        if (inputPassword.type == "password") {
+            inputPassword.type = "text";
+        } else {
+            inputPassword.type = "password";
+        }
+    };
+</script>
+
+</html>
