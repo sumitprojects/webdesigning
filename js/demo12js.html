@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="genTable('gen')">List</button>
+    <table border="1">
+        <thead>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AVG</th>
+            <th>PASS/FAIL</th>
+        </thead>
+        <tbody>
+            <tr id="gen">
+
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script>
+    var data = [10, "sumit", 2.3, true] || new Array(10, "sumit", 2.3, true);
+
+    for (let i = 0; i < data.length; i++) {
+        console.log(data[i]);
+    }
+    // data = "sumit more";
+    // for (let i = 0; i < data.length; i++) {
+    //     console.log(data[i]);
+    // }
+
+    var genTable = function(tableID) {
+        let tblObj = document.getElementById(tableID);
+        for (let i = 0; i < data.length; i++) {
+            tblObj.innerHTML += ("<td>" + (data[i]) + "</td>");
+        }
+    }
+</script>
+
+</html>

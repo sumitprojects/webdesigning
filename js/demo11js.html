@@ -66,8 +66,15 @@
         ans.innerHTML += "  " + inputColor.value;
         ans.innerHTML += "  " + inputDate.value;
 
-        if (inputCheckbox[0].checked) {
-            ans.innerHTML += "  " + inputCheckbox[0].value;
+        // if (inputCheckbox[0].checked) {
+        //     ans.innerHTML += "  " + inputCheckbox[0].value;
+        // }
+
+        for (let i = 0; i < inputCheckbox.length; i++) {
+            const element = inputCheckbox[i].checked;
+            if (element) {
+                ans.innerHTML += "  " + inputCheckbox[i].value;
+            }
         }
     };
 
