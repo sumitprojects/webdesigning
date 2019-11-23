@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jslibrary.js"></script>
+</head>
+
+<body>
+    <button onclick="operation(add,10,2,'demo')">Addition</button>
+    <button onclick="operation(sub,10,2,'demo')">Subtraction</button>
+    <button onclick="operation(mul,10,2,'demo')">Multiplication</button>
+    <button onclick="operation(div,10,2,'demo')">Division</button>
+    <button onclick="operation(pow,10,2,'demo')">Power</button>
+    <p>Ans : <span id="demo"></span></p>
+</body>
+<script>
+    var operation = function(op, a, b, id) {
+        if (typeof op == "function" && typeof op != "undefined") {
+            op(a, b, id);
+        } else {
+            console.log("Error Function not found");
+        }
+    };
+</script>
+
+</html>
