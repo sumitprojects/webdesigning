@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="calc.add(10,2,'demo')">Addition</button>
+    <button onclick="calc.sub(10,2,'demo')">Subtraction</button>
+    <button onclick="calc.operation(mul,10,2,'demo')">Multiplication</button>
+    <button onclick="calc.operation(div,10,2,'demo')">Division</button>
+    <button onclick="calc.operation(pow,10,2,'demo')">Power</button>
+    <button onclick="calc.operation(power,10,2,'demo')">Internal Power</button>
+    <button onclick="calc.operation(root,10000,'demo')">Root</button>
+
+    <br>
+    <br>
+    <input type="text" onchange="calc.operation(printData,this.value,'demo')" onkeyup="calc.operation(printData,this.value,'demo')">
+    <p>Ans : <span id="demo"></span></p>
+
+</body>
+<script src="jslibrary.js"></script>
+<script src="calc.js"></script>
+<script>
+    var power = function(num, pow, ansID) {
+        document.getElementById(ansID).innerHTML = (num ** pow);
+    }
+
+    var root = function(num, ansID) {
+        document.getElementById(ansID).innerHTML = Math.sqrt(num);
+    }
+
+    var printData = function(data, ansID) {
+        document.getElementById(ansID).innerHTML = "Hello, " + data;
+    }
+</script>
+
+</html>
