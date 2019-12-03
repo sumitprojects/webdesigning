@@ -13,6 +13,13 @@
     <div id="arrayData" style="font-size:20px;"></div>
     <div id="singleData" style="font-size:20px;"></div>
     <div>
+        <h1>Select Fruits</h1>
+        <select name="fruitData" id="fruitData">
+
+        </select>
+
+    </div>
+    <div>
         <h1>Array Add</h1>
         <div>
             <label>Add Fruit</label>
@@ -20,7 +27,7 @@
         </div>
 
         <div>
-            <button onclick="addData('add_fruit','arrayData')">Add Fruit</button>
+            <button onclick="addData('add_fruit','arrayData','fruitData')">Add Fruit</button>
         </div>
     </div>
 
@@ -32,7 +39,7 @@
         </div>
 
         <div>
-            <button onclick="removeData('remove_fruit','arrayData')">Remove Fruit</button>
+            <button onclick="removeData('remove_fruit','arrayData','fruitData')">Remove Fruit</button>
         </div>
     </div>
 
@@ -47,6 +54,20 @@
             <button onclick="getData('get_fruit','singleData')">Get Fruit</button>
         </div>
     </div>
+
+    <div>
+        <h1>Array update Fruit</h1>
+        <div>
+            <label>Update Fruit(Position)</label>
+            <input type="number" name="up_fruit" id="up_fruit" min="1" value="1">
+            <input type="text" name="rp_fruit" id="rp_fruit">
+        </div>
+
+        <div>
+            <button onclick="updateData('up_fruit','rp_fruit','arrayData','fruitData')">Update Fruit</button>
+        </div>
+    </div>
+
 
 </body>
 

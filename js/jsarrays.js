@@ -1,6 +1,5 @@
 var fruits = [];
 
-
 const arrayCreators = {
     addElement: function(data) {
         fruits.push(data);
@@ -18,27 +17,44 @@ const arrayCreators = {
         } else {
             return fruits[num - 1];
         }
+    },
+    updateElement: function(num, data) {
+        if (num > fruits.length || num <= 0) {
+            return "No Element Found";
+        } else {
+            fruits[num - 1] = data;
+        }
     }
-
 };
 
 
-var addData = function(id, ansId) {
+var selector = function(id, data) {
+    var selectOption = document.getElementById(id);
+    selectOption.innerHTML = "";
+    for (let index = 0; index < data.length; index++) {
+        const element = data[index];
+        selectOption.innerHTML += "<option>" + element + "</option>";
+    }
+};
+
+var addData = function(id, ansId, sele) {
     var data = document.getElementById(id).value;
     var ans = document.getElementById(ansId);
     if (data !== undefined && data !== "") {
         arrayCreators.addElement(data);
         ans.innerHTML = fruits;
+        selector(sele, fruits)
     }
 };
 
 
-var removeData = function(id, ansId) {
+var removeData = function(id, ansId, sele) {
     var data = parseInt(document.getElementById(id).value);
     var ans = document.getElementById(ansId);
     if (data !== undefined && data !== "") {
         arrayCreators.deleteElement(data);
         ans.innerHTML = fruits;
+        selector(sele, fruits)
     }
 };
 
@@ -50,6 +66,21 @@ var getData = function(id, ansId) {
         ans.innerHTML = arrayCreators.getElement(data);;
     }
 };
+
+var updateData = function(id, replace, ansId, sele) {
+    var index = parseInt(document.getElementById(id).value);
+    var updateText = document.getElementById(replace).value;
+    var ans = document.getElementById(ansId);
+    if (updateText !== undefined && updateText !== "") {
+        arrayCreators.updateElement(index, updateText);
+        ans.innerHTML = fruits;
+        selector(sele, fruits)
+
+    }
+
+};
+
+
 // document.getElementById("demo").innerHTML = fruits.toString();
 
 
