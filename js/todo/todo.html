@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="display-1">
+            Todo App
+        </h1>
+        <div class="row">
+            <input type="text" name="addtodo" id="addtodo" class="form-control">
+        </div>
+        <div class="row">
+            <input type="button" name="add" id="add" class="btn" value="Add Todo">
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="display-1">Todo Item</h1>
+            <div class="todo" id="todoitem">
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    // document object model
+    var addtodo = document.getElementById('addtodo'),
+        addbutton = document.getElementById('add'),
+        todoitem = document.getElementById('todoitem');
+    var todoData = [];
+    var selectDel = function() {
+        console.log('hello');
+    };
+
+    var displayItems = function(todo) {
+        if (typeof todo !== 'undefined' && todo !== null) {
+            todoitem.innerHTML = "";
+            for (let index = 0; index < todo.length; index++) {
+                const element = todo[index];
+                todoitem.innerHTML += "<p class='todo-item'><span class='item'>" + element + "</span><button class='del'>x</button></p>";
+            }
+            var deletebutton = document.getElementsByClassName('del');
+            for (let index = 0; index < deletebutton.length; index++) {
+                const element = deletebutton[index];
+                element.addEventListener('click', selectDel);
+            }
+        }
+    };
+
+
+    var addTodoItem = function() {
+        if (typeof addtodo.value !== 'undefined' && addtodo.value !== null) {
+            todoData.push(addtodo.value);
+            displayItems(todoData);
+        }
+    };
+
+    addbutton.addEventListener('click', addTodoItem);
+</script>
+
+</html>
