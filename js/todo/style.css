@@ -16,6 +16,7 @@
     background: #5959bd;
     color: white;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .row {
@@ -33,7 +34,7 @@
 }
 
 .btn {
-    background: transparent;
+    background: white;
     margin-top: 15px;
     border: 2px solid #295da6;
     width: 100%;
@@ -86,4 +87,16 @@
 .delete-todo {
     text-decoration: line-through;
     color: #232323b8;
+}
+
+.app {
+    padding: 40px;
+    background: #80808061;
+    border-radius: 10px;
+}
+
+label.label {
+    font-family: Arial;
+    font-size: 28px;
+    color: #232323;
 }

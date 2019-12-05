@@ -14,13 +14,15 @@
         <h1 class="display-1">
             Todo App
         </h1>
-        <div class="row">
-            <input type="text" name="addtodo" id="addtodo" class="form-control">
+        <div class="app">
+            <div class="row">
+                <label class="label">Enter Todo Item:</label>
+                <input type="text" name="addtodo" id="addtodo" class="form-control">
+            </div>
+            <div class="row">
+                <input type="button" name="add" id="add" class="btn" value="Add Todo">
+            </div>
         </div>
-        <div class="row">
-            <input type="button" name="add" id="add" class="btn" value="Add Todo">
-        </div>
-
     </div>
     <div class="container">
         <div class="row">
@@ -58,7 +60,7 @@
 
 
     var addTodoItem = function() {
-        if (typeof addtodo.value !== 'undefined' && addtodo.value !== null) {
+        if (typeof addtodo.value !== 'undefined' && addtodo.value !== null && addtodo.value !== '') {
             todoData.push(addtodo.value);
             displayItems(todoData);
         }
