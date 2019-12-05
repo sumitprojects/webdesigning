@@ -100,3 +100,14 @@ label.label {
     font-size: 28px;
     color: #232323;
 }
+
+.col-50 {
+    width: 50%;
+    float: left;
+}
+
+section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
