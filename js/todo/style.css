@@ -91,7 +91,7 @@
 
 .app {
     padding: 40px;
-    background: #80808061;
+    background: #d1d1d161;
     border-radius: 10px;
 }
 
@@ -110,4 +110,8 @@ section::after {
     content: "";
     display: table;
     clear: both;
+}
+
+.disble {
+    visibility: hidden;
 }
