@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<style>
+    .error {
+        outline: none;
+        border: none;
+        border: 2px solid red;
+    }
+    
+    .success {
+        outline: none;
+        border: none;
+        border: 2px solid green;
+    }
+    
+    .warning {
+        outline: none;
+        border: none;
+        border: 2px solid orange;
+    }
+</style>
+
+<body>
+    <form name="myform" id="myform">
+        <div>
+            <label for="">Name:</label>
+            <input type="text" name="name" error="username is required!" success="valid username!">
+            <span></span>
+        </div>
+        <div>
+            <label for="">Password:</label>
+            <input type="password" name="name" error="password is required!" success="valid password!">
+            <span></span>
+        </div>
+        <div>
+            <input type="button" id="login" name="login" value="register">
+        </div>
+    </form>
+</body>
+<script>
+    const jsvalidation = {};
+
+    var focusElement = function() {
+        var msgTag = this.nextSibling.nextSibling;
+        this.classList.add('warning');
+        msgTag.innerHTML = "";
+    };
+
+    var blankValidator = function() {
+        var msgTag = this.nextSibling.nextSibling;
+        if (this.value === "" || typeof this.value === undefined || this.value === null) {
+            this.classList.remove('warning');
+            this.classList.remove('success');
+            this.classList.add('error');
+            msgTag.innerHTML = this.getAttribute('error');
+        } else {
+            this.classList.remove('error');
+            this.classList.remove('warning');
+            this.classList.add('success');
+            msgTag.innerHTML = this.getAttribute('success');
+        }
+    };
+
+    var form = document.myform || document.getElementsById('myform');
+
+    for (let index = 0; index < form.length - 1; index++) {
+        const element = form[index];
+
+        element.addEventListener('focus', focusElement);
+        element.addEventListener('blur', blankValidator);
+    }
+</script>
+
+</html>

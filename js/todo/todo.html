@@ -71,8 +71,10 @@
 
     var addTodoItem = function() {
         if (typeof addtodo.value !== 'undefined' && addtodo.value !== null && addtodo.value !== '') {
-            todoData.push(addtodo.value);
-            displayItems();
+            if (todoData.indexOf(addtodo.value) == -1) {
+                todoData.push(addtodo.value);
+                displayItems();
+            }
         }
     };
 

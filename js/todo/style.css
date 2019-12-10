@@ -27,18 +27,18 @@
     margin-top: 5px;
     border: 2px solid #295da6;
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
     height: 50px;
     font-size: 25px;
     padding: 5px;
 }
 
 .btn {
-    background: white;
+    background: rgb(60, 74, 202);
     margin-top: 15px;
-    border: 2px solid #295da6;
+    border: 2px solid rgb(60, 74, 202);
     width: 100%;
-    color: #295da6;
+    color: white;
     border-radius: 10px;
     height: 50px;
     font-size: 25px;
@@ -47,7 +47,8 @@
 
 .btn:hover {
     color: white;
-    background: #295da6;
+    background: #600fca;
+    border: 2px solid #600fca;
 }
 
 .todo-item {
@@ -74,14 +75,16 @@
     padding: 5px;
     float: right;
     width: 100px;
-    background-color: #c70000cf;
-    color: white;
+    background-color: white;
+    color: #c70000cf;
     border-radius: 30px;
+    border: 1px solid #c70000cf;
 }
 
 .todo-item button:hover {
-    background-color: #c73800cf;
+    background-color: #c70000cf;
     color: white;
+    border: 1px solid transparent;
 }
 
 .delete-todo {
