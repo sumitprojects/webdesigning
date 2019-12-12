@@ -7,6 +7,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo App</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .error {
+            outline: none;
+            border: none;
+            border: 2px solid red;
+        }
+        
+        .danger {
+            color: tomato;
+            font-size: 24px;
+        }
+        
+        .success {
+            outline: none;
+            border: none;
+            border: 2px solid green;
+        }
+        
+        .warning {
+            outline: none;
+            border: none;
+            border: 2px solid orange;
+        }
+    </style>
 </head>
 
 <body>
@@ -16,13 +41,15 @@
                 Todo App
             </h1>
             <div class="app">
-                <div class="row">
-                    <label class="label">Enter Todo Item:</label>
-                    <input type="text" name="addtodo" id="addtodo" class="form-control">
-                </div>
-                <div class="row">
-                    <input type="button" name="add" id="add" class="btn" value="Add Todo">
-                </div>
+                <form name="todoForm" id="todoForm">
+                    <div class="row">
+                        <label class="label">Enter Todo Item:<span class="danger">*</span></label><span class="danger"></span>
+                        <input type="text" name="addtodo" id="addtodo" error="Add item" class="form-control">
+                    </div>
+                    <div class="row">
+                        <input type="button" name="add" id="add" class="btn" value="Add Todo">
+                    </div>
+                </form>
             </div>
         </div>
         <div class="container col-50">
@@ -32,53 +59,19 @@
                 </div>
             </div>
         </div>
-
     </section>
 
 </body>
+<script src="todo.js"></script>
+<script src="jsvalid.js"></script>
 <script>
-    // document object model
-    var addtodo = document.getElementById('addtodo'),
-        addbutton = document.getElementById('add'),
-        todoitem = document.getElementById('todoitem');
-    var todoData = [];
-    var selectDel = function() {
-        //   console.log(this.previousSibling);
-        var itemNum = parseInt(this.previousSibling.getAttribute('item'));
-        // this.parentNode.classList.add('disble');
-        //this.previousSibling.classList.add('delete-todo');
-        todoData.splice(itemNum, 1);
-        this.parentNode.remove();
-        displayItems();
+    jsvalidation.formElement = document.todoForm || document.getElementById('todoForm');
+    jsvalidation.formCreator();
 
-    };
-
-    var displayItems = function() {
-        if (typeof todoData !== 'undefined' && todoData !== null) {
-            todoitem.innerHTML = "";
-            for (let index = 0; index < todoData.length; index++) {
-                const element = todoData[index];
-                todoitem.innerHTML += "<p class='todo-item'><span class='item' item=" + index + ">" + element + "</span><button class='del'>x</button></p>";
-            }
-            var deletebutton = document.getElementsByClassName('del');
-            for (let index = 0; index < deletebutton.length; index++) {
-                const element = deletebutton[index];
-                element.addEventListener('click', selectDel);
-            }
-        }
-    };
-
-
-    var addTodoItem = function() {
-        if (typeof addtodo.value !== 'undefined' && addtodo.value !== null && addtodo.value !== '') {
-            if (todoData.indexOf(addtodo.value) == -1) {
-                todoData.push(addtodo.value);
-                displayItems();
-            }
-        }
-    };
-
-    addbutton.addEventListener('click', addTodoItem);
+    todoApp.todoInput = document.getElementById('addtodo');
+    todoApp.todoButton = document.getElementById('add');
+    todoApp.todoDisplay = document.getElementById('todoitem');
+    todoApp.todoReg();
 </script>
 
 </html>
