@@ -30,7 +30,10 @@
             if (typeof todoApp.todoInput.value !== 'undefined' && todoApp.todoInput.value !== null && todoApp.todoInput.value !== '') {
                 if (todoApp.todoData.indexOf(todoApp.todoInput.value) == -1) {
                     todoApp.todoData.push(todoApp.todoInput.value);
+                    todoApp.todoInput.value = "";
                     todoApp.displayItems();
+                } else {
+                    jsvalidation.customValidation(todoApp.todoInput, 'Already Added!', 'error');
                 }
             }
         },
