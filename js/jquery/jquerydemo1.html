@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p><b>Sumit</b></p>
+    <p class="demo"><b>Sumit2</b></p>
+    <p id="sample"><b>Sumit3</b></p>
+    <p title="data"><b>Sumit4</b></p>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        // tag selectors
+        console.log(jQuery('p'));
+        // class selector
+        console.log(jQuery('.demo'));
+        // id selector
+        console.log(jQuery('#sample'));
+        // attr selector
+        console.log(jQuery('[title="data"]'));
+
+
+        // simple events and triggers
+        jQuery('p').click(function() {
+            // innerHtml
+            console.log(jQuery(this).html());
+            //innerText
+            console.log(jQuery(this).text());
+        });
+
+
+    });
+</script>
+
+</html>
