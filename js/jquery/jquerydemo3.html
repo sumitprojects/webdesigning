@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box-rel {
+        position: relative;
+        height: 500px;
+        width: 500px;
+    }
+    
+    .box-ab {
+        background: #98bf21;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Hide/Show/Toggle</h1>
+        <button class="btn btn-hide">Hide</button>
+        <button class="btn btn-show">Show</button>
+        <button class="btn btn-toggle">Toggle</button>
+    </div>
+    <div>
+        <h1>Slide up/slide down/Slide Toggle</h1>
+        <button class="btn btn-slide-up">Hide</button>
+        <button class="btn btn-slide-down">Show</button>
+        <button class="btn btn-slide-toggle">Toggle</button>
+    </div>
+    <div class="box">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel impedit quis corrupti facilis optio? Ex ducimus exercitationem quod consequuntur enim commodi necessitatibus modi hic harum voluptas. Aliquam fuga excepturi corporis?</p>
+    </div>
+    <div>
+        <h1>Custom Animation</h1>
+        <button class="btn btn-up">Up</button>
+        <button class="btn btn-down">Down</button>
+        <button class="btn btn-left">Left</button>
+        <button class="btn btn-tp">ToogleUp</button>
+        <button class="btn btn-td">ToogledDown</button>
+        <button class="btn btn-tl">ToogledLeft</button>
+        <button class="btn btn-tr">ToogledRight</button>
+
+    </div>
+    <div class="box-rel">
+        <div class="box-ab"></div>
+    </div>
+
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.btn.btn-hide').click(function() {
+            $('.box').hide(5000);
+        });
+
+        $('.btn.btn-show').click(function() {
+            $('.box').show('fast');
+        });
+
+        $('.btn.btn-toggle').click(function() {
+            $('.box').toggle('slow');
+        });
+
+
+        $('.btn.btn-slide-up').click(function() {
+            $('.box').slideUp(5000);
+        });
+
+        $('.btn.btn-slide-down').click(function() {
+            $('.box').slideDown('fast');
+        });
+
+        $('.btn.btn-slide-toggle').click(function() {
+            $('.box').slideToggle('slow');
+        });
+
+        $('.btn.btn-up').click(function() {
+            $('.box-ab').animate({
+                top: '-100px'
+            });
+        });
+
+        $('.btn.btn-down').click(function() {
+            $('.box-ab').animate({
+                top: '100px'
+            });
+        });
+
+        $('.btn.btn-left').click(function() {
+            $('.box-ab').animate({
+                left: '-100px'
+            });
+        });
+        $('.btn-tp').click(function() {
+            $('.box-ab').animate({
+                height: 'toggle',
+                opacity: 'toggle'
+            }, 'slow');
+        });
+        $('.btn-td').click(function() {
+            $('.box-ab').animate({
+                bottom: 'toggle',
+                opacity: 'toggle'
+            }, 'slow');
+        });
+        $('.btn-tl').click(function() {
+            $('.box-ab').animate({
+                width: 'toggle',
+                opacity: 'toggle'
+            }, 'slow');
+        });
+        $('.btn-tr').click(function() {
+            $('.box-ab').animate({
+                left: '100px',
+            }, 'slow');
+        });
+    });
+</script>
+
+</html>
