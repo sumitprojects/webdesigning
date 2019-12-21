@@ -47,6 +47,7 @@
         <button class="btn btn-td">ToogledDown</button>
         <button class="btn btn-tl">ToogledLeft</button>
         <button class="btn btn-tr">ToogledRight</button>
+        <button class="btn btn-bg">ToogledBg</button>
 
     </div>
     <div class="box-rel">
@@ -121,6 +122,12 @@
             $('.box-ab').animate({
                 left: '100px',
             }, 'slow');
+        });
+
+        $('.btn-bg').click(function() {
+            $('.box-ab').animate({
+                opacity: 'toggle'
+            }, 50000);
         });
     });
 </script>

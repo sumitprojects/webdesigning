@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box2 {
+            display: none;
+            background: #98bf21;
+        }
+        
+        .box-rel {
+            position: relative;
+            height: 100px;
+            width: 100px;
+            display: none;
+        }
+        
+        .box-ab {
+            background: #98bf21;
+            height: 100px;
+            width: 100px;
+            position: absolute;
+        }
+        
+        .box2 p {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="btn-call1">Callback1</button>
+    <div class="box-rel">
+        <div class="box-ab"></div>
+    </div>
+    <div class="box2">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi excepturi fugit iste quis, consectetur architecto dicta cum fugiat facere reprehenderit perspiciatis quo corrupti repellat consequatur, sit tempore autem iure perferendis?</p>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.btn-call1').click(function() {
+            $('.box-rel').toggle("slow", function() {
+                $('.box2').slideToggle("slow", function() {
+                    $('.box2 p').css({
+                        'font-size': '20px',
+                        'background': '#232323',
+                        'color': 'white',
+                        'padding': '15px'
+                    });
+                    $('.box2 p').slideToggle('slow');
+                });
+            });
+        });
+    });
+</script>
+
+</html>
