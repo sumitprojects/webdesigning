@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo Form</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h1>Product One</h1>
+            <div>
+                <img src="../../../img/img01.jpg" alt="">
+            </div>
+            <p>Price : <span id="product-one">50</span>$</p>
+        </div>
+        <input type="number" name="" id="qty" value="1">
+    </div>
+    <div>
+        <p>
+            <span>Total Price: </span>
+            <span id="total_price"></span>
+        </p>
+    </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#qty').blur(function() {
+            var pricePro = parseInt($('#product-one').text());
+            var qty = parseInt($(this).val());
+            if (qty >= 1 && qty <= 5) {
+                $('#total_price').text(pricePro * qty);
+            } else {
+                $(this).val(1);
+                $('#total_price').text(pricePro);
+            }
+        });
+    });
+</script>
+
+</html>
