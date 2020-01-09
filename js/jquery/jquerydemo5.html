@@ -7,15 +7,12 @@
         $(document).ready(function() {
             $("button").click(function() {
                 $("#p1")
-                    .animate({
-                        opacity: 'toggle'
-                    })
                     .slideUp(2000, function() {
                         $(this).css("color", "red");
                     })
                     .slideDown(2000, function() {
                         $(this).css("color", "black");
-                    });
+                    }).fadeToggle(3000);
             });
         });
     </script>

@@ -20,6 +20,16 @@
                 <input type="text" name="user">
                 <span></span>
             </div>
+
+            <div>
+                <input type="text" name="pass">
+                <span></span>
+            </div>
+
+            <div>
+                <label>Hobby: singing</label>
+                <input type="checkbox" name="hobby" value="singing">
+            </div>
         </form>
         <div id="textData">
 
@@ -32,12 +42,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        $('input[name="user"]').focus(function() {
+        $('input[name]').focus(function() {
             $(this).css({
                 "border": "5px solid orange"
             });
         });
-        $('input[name="user"]').blur(function() {
+        $('input[name]').blur(function() {
             var data = $(this).val(); ///get
             if (data !== "" && data !== null && data !== undefined) {
                 $(this).css({
@@ -50,9 +60,23 @@
                 $(this).css({
                     "border": "5px solid red"
                 });
-                $('#textData').text('data is not valid');
+                $('#textData').text('<b>data is not valid</b>');
 
                 $('#htmlData').html('<b>data is not valid</b>');
+            }
+        });
+
+
+        $('input[type=checkbox]').change(function() {
+            if ($(this).is(":checked")) {
+                $('#textData').text($(this).val());
+
+                $('#htmlData').html('<b>' + $(this).val() + '</b>');
+            } else {
+
+                $('#textData').text('');
+
+                $('#htmlData').html('');
             }
         });
     });
