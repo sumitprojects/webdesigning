@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form>
+            <div>
+                <label>Hobby: singing</label>
+                <input type="checkbox" name="hobby" value="singing">
+                <label>Hobby: dancing</label>
+                <input type="checkbox" name="hobby" value="dancing">
+                <label>Hobby: reading</label>
+                <input type="checkbox" name="hobby" value="reading">
+            </div>
+
+            <div>
+                <label>Gender: Male</label>
+                <input type="radio" name="gender" value="male">
+                <label>Gender: Female</label>
+                <input type="radio" name="gender" value="female">
+            </div>
+        </form>
+        <div id="htmlData">
+
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('input[name=hobby]').change(function() {
+            if ($(this).is(":checked")) {
+                var data = $('#htmlData').html();
+                $('#htmlData').html(data + '<p><b>' + $(this).val() + '</b></p>');
+            } else {
+                var data = $('#htmlData').html();
+                data = data.replace($(this).val(), '');
+                $('#htmlData').html(data);
+            }
+        });
+        $('input[name=gender]').change(function() {
+            if ($(this).is(":checked")) {
+                $('#htmlData').html('<p><b>' + $(this).val() + '</b></p>');
+            } else {
+                $('#htmlData').html('');
+            }
+        });
+
+    });
+</script>
+
+</html>
