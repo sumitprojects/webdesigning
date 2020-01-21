@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .error {
+            outline: none;
+            border: none;
+            border: 2px solid red;
+        }
+        
+        .success {
+            outline: none;
+            border: none;
+            border: 2px solid green;
+        }
+        
+        .warning {
+            outline: none;
+            border: none;
+            border: 2px solid orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form name="demo">
+            <input type="text" id="search" name="search" />
+        </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#search').on({
+            focus: function() {
+                $(this).toggleClass('warning');
+            },
+            blur: function() {
+                $(this).toggleClass('warning');
+                if ($(this).val() === '') {
+                    $(this).removeClass('success');
+                    $(this).toggleClass('error');
+                } else {
+                    $(this).removeClass('error');
+                    $(this).toggleClass('success');
+                }
+            }
+        });
+    });
+</script>
+
+</html>
