@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".color").click(function() {
+                let clr = $(this).html();
+                //$('#demo').css('background-color',clr);
+                $('#demo')
+                    .animate({
+                            width: 'toggle'
+                        },
+                        'slow',
+                        function() {
+                            $(this).css({
+                                'background-color': clr,
+                                'color': 'white'
+                            })
+                        });
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <h2>This is a heading</h2>
+    <p id="demo">Data</p>
+    <p class="color" style="background-color:#ff0000">red</p>
+    <p class="color" style="background-color:#00ff00">green</p>
+    <p class="color" style="background-color:#0000ff">blue</p>
+
+</body>
+
+</html>
