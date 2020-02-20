@@ -42,8 +42,26 @@
     $(document).ready(function() {
         var spinner = "<div class='loading'><div class='spinner-grow text-muted'></div><div class='spinner-grow text-primary'></div><div class='spinner-grow text-success'></div><div class='spinner-grow text-info'></div><div class='spinner-grow text-warning'></div><div class='spinner-grow text-danger'></div><div class='spinner-grow text-secondary'></div><div class='spinner-grow text-dark'></div><div class='spinner-grow text-light'></div></div>";
 
+
+
         var button = $('.btn');
         var container = $('body');
+
+
+        container.prepend(spinner);
+        container.addClass('card-progress');
+        button.attr('disabled', 'true');
+
+
+        setTimeout(
+            function() {
+                container.find('div.loading').remove();
+                button.removeAttr('disabled');
+                container.removeClass('card-progress');
+            }, 3000);
+
+
+
         button.on('click', function() {
             container.prepend(spinner);
             container.addClass('card-progress');

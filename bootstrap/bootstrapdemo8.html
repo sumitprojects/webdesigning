@@ -13,7 +13,10 @@
 </head>
 
 <body>
-    <div class="progress-bar progress-bar-striped progress-bar-animated"></div>
+    <div class="progress" style="height: 3px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <!-- <div class="progress-bar progress-bar-striped progress-bar-animated"></div> -->
     <h1>Example heading <span class="badge badge-secondary">New</span></h1>
     <div class="container">
         <div class="btn-group btn-group-sm">
@@ -92,6 +95,7 @@
                     <a class="dropdown-item" href="#">Smartphone</a>
                 </div>
             </div>
+
         </div>
     </div>
 </body>
@@ -100,30 +104,30 @@
         var counter = 0;
         var pageProgress = $('.progress-bar');
 
-        setInterval(progress, 1000);
+        setInterval(progress, 100);
 
         function progress() {
             pageProgress.width(counter + '%');
-            pageProgress.html(counter + '%');
+            //pageProgress.html(counter + '%');
 
             if (counter >= 100) {
                 pageProgress.fadeOut('slow');
                 clearInterval(progress);
             }
             if (counter <= 10) {
-                counter += 5;
+                counter += 1;
                 pageProgress.removeClass('bg-success');
                 pageProgress.addClass('bg-danger');
             } else if (counter <= 50) {
-                counter += 10;
+                counter += 1;
                 pageProgress.removeClass('bg-danger');
                 pageProgress.addClass('bg-warning');
             } else if (counter <= 75) {
-                counter += 15;
+                counter += 1;
                 pageProgress.removeClass('bg-warning');
                 pageProgress.addClass('bg-info');
             } else if (counter < 100) {
-                counter += 20;
+                counter += 1;
                 pageProgress.removeClass('bg-info');
                 pageProgress.addClass('bg-success');
             }
