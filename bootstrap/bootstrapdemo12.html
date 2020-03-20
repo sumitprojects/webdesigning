@@ -17,9 +17,14 @@
             Dropdown button
           </button>
             <div class="dropdown-menu">
+                <div class="dropdown dropright">
+                    <button class="dropdown-toggle" data-toggle="dropdown" href="#">Drop</button>
+                    <div class="dropdown-menu">
+                        <a href="" class="dropdown-item">Nested</a>
+                    </div>
+                </div>
                 <div class="dropdown-header">Dropdown header 1</div>
-                <a class="dropdown-item active" href="#">Link 1</a>
-                <a class="dropdown-item disabled" href="#">Link 2</a>
+                <a class="dropdown-item" href="#">Link 2</a>
                 <div class="dropdown-divider"></div>
                 <div class="dropdown-header">Dropdown header 1</div>
                 <a class="dropdown-item" href="#">Link 3</a>
@@ -74,6 +79,49 @@
             </div>
         </div>
     </div>
+
+    <div class="dropdown">
+        <button type="button" class="btn btn-secondary" id="drop1">
+          Right-aligned menu
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+            <div class="dropdown">
+                <button type="button" class="btn btn-secondary" id="drop2">
+                  Right-aligned menu
+                </button>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <button class="dropdown-item" type="button">Action</button>
+                    <button class="dropdown-item" type="button">Another action</button>
+                    <button class="dropdown-item" type="button">Something else here</button>
+                </div>
+            </div>
+            <button class="dropdown-item" type="button">Another action</button>
+            <button class="dropdown-item" type="button">Something else here</button>
+        </div>
+    </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $('#drop1').click(function() {
+            console.log($(this).parent('.dropdown').hasClass('show'));
+            if (!$(this).parent('.dropdown').hasClass('show')) {
+                $(this).dropdown('toggle');
+            } else {
+                $(this).parent('.dropdown').removeClass('show');
+                $(this).dropdown('toggle');
+            }
+        });
+        $('#drop2').click(function() {
+            console.log($(this).parent('.dropdown').hasClass('show'));
+            if (!$(this).parent('.dropdown').hasClass('show')) {
+                $(this).dropdown('toggle');
+            } else {
+                $(this).parent('.dropdown').removeClass('show');
+                $(this).dropdown('toggle');
+            }
+        });
+
+    });
+</script>
 
 </html>
